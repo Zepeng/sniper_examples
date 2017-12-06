@@ -11,5 +11,3 @@ use RootIOSvc    v* RootIO
 
 library tutorials ../src/*.cxx
 apply_pattern linker_library library=tutorials
-
-#macro_append ROOT_linkopts " -lTutorials"
