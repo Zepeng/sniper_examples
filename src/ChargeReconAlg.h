@@ -14,19 +14,11 @@ class ChargeReconAlg: public AlgBase
 		bool execute();
 		bool finalize();
 
-		int PadNumOnTile;
-		double sample_time;
-		double PadSize;
-		double TileSize;
 		double NoiseCut;
 		double WaveformCut;
-		double EquNoise;
 		std::string event_type;
-        double ChannelRiseTime(std::vector<double>& fWaveform, double samplingfrequency);
-        double EventRiseTime(std::vector<double>& fWaveform, double samplingfrequency);
-        double FreqChargeRecon(std::vector<double>& fWaveform, double samplingfrequency);
-        void BesselFilter(std::vector<double>& UnFiltered, std::vector<double>& Filtered);
-	private:
+	
+    private:
 		double Diffusion;
 		double Field;
 		double SamplingFrequency;

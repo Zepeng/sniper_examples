@@ -15,11 +15,6 @@ class ReadSimEvent: public AlgBase
 		bool finalize();
 
 	private:
-		double Diffusion;
-		double Field;
-		double SamplingFrequency;
-		double Noise;
-		double TotE;
 
 };
 

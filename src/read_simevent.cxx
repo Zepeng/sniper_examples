@@ -13,8 +13,8 @@ DECLARE_ALGORITHM(ReadSimEvent);
 	ReadSimEvent::ReadSimEvent(const std::string& name)
 : AlgBase(name)
 {
-	declProp("Noise",     Noise=0.);
-	declProp("SamplingFrequency",	SamplingFrequency=2.);
+	//declProp("Noise",     Noise=0.);
+	//declProp("SamplingFrequency",	SamplingFrequency=2.);
 
 }
 
