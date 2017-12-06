@@ -1,0 +1,15 @@
+package tutorials 
+
+use SniperRelease v*
+
+use EvtNavigator v* DataModel
+use SimEvent     v* DataModel
+use ElecEvent    v* DataModel
+use PidTmvaEvent v* DataModel
+use BufferMemMgr v* CommonSvc
+use RootIOSvc    v* RootIO
+
+library tutorials ../src/*.cxx
+apply_pattern linker_library library=tutorials
+
+#macro_append ROOT_linkopts " -lTutorials"
