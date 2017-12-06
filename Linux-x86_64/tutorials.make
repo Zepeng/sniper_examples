@@ -3,7 +3,7 @@
 #====================================
 #  Library tutorials
 #
-#   Generated Wed Dec  6 12:12:04 2017  by zl423
+#   Generated Wed Dec  6 12:28:46 2017  by zl423
 #
 #====================================
 
@@ -110,7 +110,7 @@ tutorialsprototype :  ;
 
 endif
 
-tutorialscompile : $(bin)ChargeReconAlg.o $(bin)MC_change.o ;
+tutorialscompile : $(bin)create_simevent.o $(bin)ChargeReconAlg.o ;
 
 #-- end of libary_header ----------------
 #-- start of libary ----------------------
@@ -118,10 +118,10 @@ tutorialscompile : $(bin)ChargeReconAlg.o $(bin)MC_change.o ;
 tutorialsLIB :: $(tutorialslib) $(tutorialsshstamp)
 	$(echo) "tutorials : library ok"
 
-$(tutorialslib) :: $(bin)ChargeReconAlg.o $(bin)MC_change.o
+$(tutorialslib) :: $(bin)create_simevent.o $(bin)ChargeReconAlg.o
 	$(lib_echo) "static library $@"
 	$(lib_silent) [ ! -f $@ ] || \rm -f $@
-	$(lib_silent) $(ar) $(tutorialslib) $(bin)ChargeReconAlg.o $(bin)MC_change.o
+	$(lib_silent) $(ar) $(tutorialslib) $(bin)create_simevent.o $(bin)ChargeReconAlg.o
 	$(lib_silent) $(ranlib) $(tutorialslib)
 	$(lib_silent) cat /dev/null >$(tutorialsstamp)
 
@@ -151,8 +151,8 @@ $(tutorialsshstamp) :: $(tutorialslibname).$(shlibsuffix)
 
 tutorialsclean ::
 	$(cleanup_echo) objects tutorials
-	$(cleanup_silent) /bin/rm -f $(bin)ChargeReconAlg.o $(bin)MC_change.o
-	$(cleanup_silent) /bin/rm -f $(patsubst %.o,%.d,$(bin)ChargeReconAlg.o $(bin)MC_change.o) $(patsubst %.o,%.dep,$(bin)ChargeReconAlg.o $(bin)MC_change.o) $(patsubst %.o,%.d.stamp,$(bin)ChargeReconAlg.o $(bin)MC_change.o)
+	$(cleanup_silent) /bin/rm -f $(bin)create_simevent.o $(bin)ChargeReconAlg.o
+	$(cleanup_silent) /bin/rm -f $(patsubst %.o,%.d,$(bin)create_simevent.o $(bin)ChargeReconAlg.o) $(patsubst %.o,%.dep,$(bin)create_simevent.o $(bin)ChargeReconAlg.o) $(patsubst %.o,%.d.stamp,$(bin)create_simevent.o $(bin)ChargeReconAlg.o)
 	$(cleanup_silent) cd $(bin); /bin/rm -rf tutorials_deps tutorials_dependencies.make
 
 #-----------------------------------------------------------------
@@ -204,7 +204,7 @@ ifneq ($(MAKECMDGOALS),tutorialsprototype)
 
 $(bin)tutorials_dependencies.make : $(use_requirements) $(cmt_final_setup_tutorials)
 	$(echo) "(tutorials.make) Rebuilding $@"; \
-	  $(build_dependencies) -out=$@ -start_all $(src)ChargeReconAlg.cxx $(src)MC_change.cxx -end_all $(includes) $(app_tutorials_cppflags) $(lib_tutorials_cppflags) -name=tutorials $? -f=$(cmt_dependencies_in_tutorials) -without_cmt
+	  $(build_dependencies) -out=$@ -start_all $(src)create_simevent.cxx $(src)ChargeReconAlg.cxx -end_all $(includes) $(app_tutorials_cppflags) $(lib_tutorials_cppflags) -name=tutorials $? -f=$(cmt_dependencies_in_tutorials) -without_cmt
 
 -include $(bin)tutorials_dependencies.make
 
@@ -215,6 +215,36 @@ endif
 tutorialsclean ::
 	$(cleanup_silent) \rm -rf $(bin)tutorials_deps $(bin)tutorials_dependencies.make
 #-- end of dependencies -------------------
+#-- start of cpp_library -----------------
+
+ifneq (,)
+
+ifneq ($(MAKECMDGOALS),tutorialsclean)
+ifneq ($(MAKECMDGOALS),uninstall)
+-include $(bin)$(binobj)create_simevent.d
+
+$(bin)$(binobj)create_simevent.d :
+
+$(bin)$(binobj)create_simevent.o : $(cmt_final_setup_tutorials)
+
+$(bin)$(binobj)create_simevent.o : $(src)create_simevent.cxx
+	$(cpp_echo) $(src)create_simevent.cxx
+	$(cpp_silent) $(cppcomp)  -o $@ $(use_pp_cppflags) $(tutorials_pp_cppflags) $(lib_tutorials_pp_cppflags) $(create_simevent_pp_cppflags) $(use_cppflags) $(tutorials_cppflags) $(lib_tutorials_cppflags) $(create_simevent_cppflags) $(create_simevent_cxx_cppflags)  $(src)create_simevent.cxx
+endif
+endif
+
+else
+$(bin)tutorials_dependencies.make : $(create_simevent_cxx_dependencies)
+
+$(bin)tutorials_dependencies.make : $(src)create_simevent.cxx
+
+$(bin)$(binobj)create_simevent.o : $(create_simevent_cxx_dependencies)
+	$(cpp_echo) $(src)create_simevent.cxx
+	$(cpp_silent) $(cppcomp) -o $@ $(use_pp_cppflags) $(tutorials_pp_cppflags) $(lib_tutorials_pp_cppflags) $(create_simevent_pp_cppflags) $(use_cppflags) $(tutorials_cppflags) $(lib_tutorials_cppflags) $(create_simevent_cppflags) $(create_simevent_cxx_cppflags)  $(src)create_simevent.cxx
+
+endif
+
+#-- end of cpp_library ------------------
 #-- start of cpp_library -----------------
 
 ifneq (,)
@@ -241,36 +271,6 @@ $(bin)tutorials_dependencies.make : $(src)ChargeReconAlg.cxx
 $(bin)$(binobj)ChargeReconAlg.o : $(ChargeReconAlg_cxx_dependencies)
 	$(cpp_echo) $(src)ChargeReconAlg.cxx
 	$(cpp_silent) $(cppcomp) -o $@ $(use_pp_cppflags) $(tutorials_pp_cppflags) $(lib_tutorials_pp_cppflags) $(ChargeReconAlg_pp_cppflags) $(use_cppflags) $(tutorials_cppflags) $(lib_tutorials_cppflags) $(ChargeReconAlg_cppflags) $(ChargeReconAlg_cxx_cppflags)  $(src)ChargeReconAlg.cxx
-
-endif
-
-#-- end of cpp_library ------------------
-#-- start of cpp_library -----------------
-
-ifneq (,)
-
-ifneq ($(MAKECMDGOALS),tutorialsclean)
-ifneq ($(MAKECMDGOALS),uninstall)
--include $(bin)$(binobj)MC_change.d
-
-$(bin)$(binobj)MC_change.d :
-
-$(bin)$(binobj)MC_change.o : $(cmt_final_setup_tutorials)
-
-$(bin)$(binobj)MC_change.o : $(src)MC_change.cxx
-	$(cpp_echo) $(src)MC_change.cxx
-	$(cpp_silent) $(cppcomp)  -o $@ $(use_pp_cppflags) $(tutorials_pp_cppflags) $(lib_tutorials_pp_cppflags) $(MC_change_pp_cppflags) $(use_cppflags) $(tutorials_cppflags) $(lib_tutorials_cppflags) $(MC_change_cppflags) $(MC_change_cxx_cppflags)  $(src)MC_change.cxx
-endif
-endif
-
-else
-$(bin)tutorials_dependencies.make : $(MC_change_cxx_dependencies)
-
-$(bin)tutorials_dependencies.make : $(src)MC_change.cxx
-
-$(bin)$(binobj)MC_change.o : $(MC_change_cxx_dependencies)
-	$(cpp_echo) $(src)MC_change.cxx
-	$(cpp_silent) $(cppcomp) -o $@ $(use_pp_cppflags) $(tutorials_pp_cppflags) $(lib_tutorials_pp_cppflags) $(MC_change_pp_cppflags) $(use_cppflags) $(tutorials_cppflags) $(lib_tutorials_cppflags) $(MC_change_cppflags) $(MC_change_cxx_cppflags)  $(src)MC_change.cxx
 
 endif
 

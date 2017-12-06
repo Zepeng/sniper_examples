@@ -35,13 +35,13 @@ def process_file(filename):
   import Geometry
   simgeomsvc = task.createSvc("SimGeomSvc")
 
-  # = MC_change = 
-  Sniper.loadDll("Linux-x86_64/libMC_change.so")
-  myalg = task.createAlg("MC_change/myalg")
+  # = create_simevent=
+  Sniper.loadDll("Linux-x86_64/libtutorials.so")
+  myalg = task.createAlg("create_simevent/myalg")
   myalg.property("InputMCName").set(inputmc)
   myalg.property("InputMCDir").set(inputmcdir)
 
-  n_entries = get_entries(filename) 
+  n_entries = get_entries(filename)
   task.setEvtMax(n_entries)
   task.show()
   task.run()

@@ -11,9 +11,9 @@
 #include "TFile.h"
 #include "TTree.h"
 
-DECLARE_ALGORITHM(MC_change);
+DECLARE_ALGORITHM(create_simevent);
 
-	MC_change::MC_change(const std::string& name)
+	create_simevent::create_simevent(const std::string& name)
 : AlgBase(name)
 {
 	declProp("InputMCName", InputMCName="test.root");
@@ -21,13 +21,13 @@ DECLARE_ALGORITHM(MC_change);
 
 }
 
-MC_change::~MC_change()
+create_simevent::~create_simevent()
 {
 
 }
 
 	bool
-MC_change::initialize()
+create_simevent::initialize()
 {
 	std::string filename = InputMCDir + "/" + InputMCName;
 	f = new TFile(filename.c_str());
@@ -48,7 +48,7 @@ MC_change::initialize()
 }
 
 	bool
-MC_change::execute()
+create_simevent::execute()
 {
 	fTEEnergy.clear();
 	fTEX.clear();
@@ -100,7 +100,7 @@ MC_change::execute()
 }
 
 	bool
-MC_change::finalize()
+create_simevent::finalize()
 {
 	return true;
 }

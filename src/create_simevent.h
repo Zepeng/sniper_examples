@@ -1,5 +1,5 @@
-#ifndef MC_change_h
-#define MC_change_h
+#ifndef create_simevent_h
+#define create_simevent_h
 
 #include "SniperKernel/AlgBase.h"
 #include "TROOT.h"
@@ -12,11 +12,11 @@
 #include "TBranch.h"
 
 
-class MC_change: public AlgBase 
+class create_simevent: public AlgBase 
 {
 	public:
-		MC_change(const std::string& name);
-		~MC_change();
+		create_simevent(const std::string& name);
+		~create_simevent();
 
 		bool initialize();
 		bool execute();
