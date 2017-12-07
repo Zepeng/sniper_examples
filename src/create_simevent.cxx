@@ -3,9 +3,9 @@
 #include "SniperKernel/SniperPtr.h"
 #include "SniperKernel/SniperDataPtr.h"
 #include "BufferMemMgr/EvtDataPtr.h"
+#include "BufferMemMgr/IDataMemMgr.h"
 #include "EvtNavigator/NavBuffer.h"
 #include "Event/SimHeader.h"
-#include "BufferMemMgr/IDataMemMgr.h"
 
 #include "RootWriter/RootWriter.h"
 #include "TFile.h"

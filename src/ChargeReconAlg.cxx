@@ -8,11 +8,6 @@
 #include "Event/ElecHeader.h"
 #include "Event/EventObject.h"
 #include "BufferMemMgr/IDataMemMgr.h"
-#include "Event/PidTmvaHeader.h"
-#include "TMath.h"
-#include "TRandom.h"
-#include "TVirtualFFT.h"
-#include "TF1.h"
 
 DECLARE_ALGORITHM(ChargeReconAlg);
 
