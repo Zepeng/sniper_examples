@@ -3,6 +3,7 @@
 
 #include "SniperKernel/AlgBase.h"
 #include <string>
+#include "TH1.h"
 
 class ReadSimEvent: public AlgBase 
 {
@@ -15,7 +16,8 @@ class ReadSimEvent: public AlgBase
 		bool finalize();
 
 	private:
-
+        //declare a 1D histogram
+        TH1* h_te;
 };
 
 #endif
