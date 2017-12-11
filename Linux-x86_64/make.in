@@ -1,8 +1,0 @@
-document cmt_action_runner make -group=cmt_actions action_value=gmake'"'" "'"'bin=../Linux-x86_64/'"'" "'"'
-make_fragment make_header /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/make_header
-make_fragment dependencies /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/dependencies
-make_fragment cleanup_header /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/cleanup_header
-make_fragment cmt_action_runner -header=cmt_action_runner_header /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/cmt_action_runner
-make_fragment cmt_action_runner_header /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/cmt_action_runner_header
-make_fragment document_header /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/document_header
-make_fragment dependency /home/hep/david_moore/zl423/NEXOTOP/ExternalLibs/CMT/v1r26/mgr/fragments/dependency
