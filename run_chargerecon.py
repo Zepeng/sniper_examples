@@ -46,19 +46,12 @@ if __name__ == "__main__":
 	ros.property("OutputStreams").set({
 		"/Event/Sim": args.output,
 		"/Event/Elec": args.output,
-		"/Event/PidTmva":	args.output,
 		})
 
 	# = digitizer =
-	Sniper.loadDll("Linux-x86_64/libtmva_pid.so")
+	Sniper.loadDll("Linux-x86_64/libtutorials.so")
 
 	digitest = task.createAlg("ChargeReconAlg")
-	#digitest.property("PadSize").set(6)
-	#digitest.property("TileSize").set(96)
-	digitest.property("Noise").set(args.noise)
-	#digitest.property("Diffusion").set(50)
-	#digitest.property("Field").set(380)
-	#digitest.property("SamplingFrequency").set(args.samplingfrequency)
 
 
 	task.show()
