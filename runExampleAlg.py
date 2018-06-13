@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
   Sniper.loadDll("libSimEvent.so")
   Sniper.loadDll("libElecEvent.so")
-  Sniper.loadDll("Linux-x86_64/libExampleAlg.so")
+  Sniper.loadDll("Linux-x86_64/libExampleAlg.so")#link to local library with out of CMTPATH code.
 
   task = Sniper.Task("task")
   #task.asTop()
