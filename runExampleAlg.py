@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
   Sniper.loadDll("libSimEvent.so")
   Sniper.loadDll("libElecEvent.so")
-  Sniper.loadDll("libExampleAlg.so")
+  Sniper.loadDll("Linux-x86_64/libExampleAlg.so")
 
   task = Sniper.Task("task")
   #task.asTop()

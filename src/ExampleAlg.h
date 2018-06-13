@@ -17,8 +17,8 @@ class ExampleAlg: public AlgBase{
 
   private:
   
-  TH1F *hChannels;
-
+  TH1F *sCharge;
+  TH1F *nCharge;
 };
 
 #endif
