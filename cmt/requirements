@@ -1,13 +1,12 @@
-package tutorials 
+package ExampleAlg
 
 use SniperRelease v*
 
 use EvtNavigator v* DataModel
 use SimEvent     v* DataModel
 use ElecEvent    v* DataModel
-use PidTmvaEvent v* DataModel
 use BufferMemMgr v* CommonSvc
 use RootIOSvc    v* RootIO
 
-library tutorials ../src/*.cxx
-apply_pattern linker_library library=tutorials
+library ExampleAlg ../src/ExampleAlg.cxx
+apply_pattern linker_library library=ExampleAlg
